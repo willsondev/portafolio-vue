@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Portfolio</title>
+    <style>
+      /* Ocultar fondo adicional en pantallas móviles */
+      @media (max-width: 768px) {
+        .pattern-background, .radial-background {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto  border-dashed border-gray-500 bg-black relative">
+    <!-- Fondo adicional con gradientes y patrones -->
+    <div class="pattern-background absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+    <div class="radial-background absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]"></div>
+    
+    <div id="app" class="relative z-10"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
