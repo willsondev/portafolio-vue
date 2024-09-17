@@ -33,6 +33,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-/* Puedes agregar estilos adicionales aquí si es necesario */
+<style  scoped>
+
 </style>
