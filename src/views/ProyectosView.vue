@@ -8,7 +8,7 @@
     <!-- Mis proyectos -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 ">
       <ProjectCard
-  imageSrc="../../public/img/img-proyectos/arqueria.png"
+  imageSrc="../../public/img/arqueria.png"
   title="Clases de Arquería"
   description="Aplicación web para reservar clases de arquería con autenticación de usuarios y administración de contenido. Desarrollada con Vue.js."
 />
