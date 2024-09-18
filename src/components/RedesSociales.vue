@@ -40,7 +40,7 @@ export default {
       window.open('https://github.com/willsondev', '_blank');
     },
     downloadCV() {
-      window.open('../../public/Willson-Efrain-Huenchulao-Valdes-cv.pdf', '_blank'); 
+      window.open('../../public/img/Willson-Efrain-Huenchulao-Valdes-CV-FRONTEND.pdf', '_blank'); 
     }
   }
 }
