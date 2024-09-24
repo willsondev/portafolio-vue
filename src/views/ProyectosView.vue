@@ -17,6 +17,8 @@
   :icon4="nodeIcon"
   :icon5="expressIcon"
   :icon6="mongoIcon"
+    githubUrl="https://github.com/willsondev/frontend-arqueria-vue"
+  demoUrl="https://frontend-arqueria.vercel.app"
  
 />
 
@@ -28,6 +30,8 @@
    :icon1="vueIcon"
         :icon2="firebaseIcon"
         :icon3="tailwindIcon"
+        githubUrl="https://github.com/willsondev/barberia-app"
+  demoUrl="https://barberia-app-sepia.vercel.app"
 />
 
       

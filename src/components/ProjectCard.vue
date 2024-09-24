@@ -1,7 +1,6 @@
 <template>
   <div class="text-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
     <div class="relative">
-      <!-- Imagen que se mostrará por defecto -->
       <img
         v-if="!isHovered"
         :src="imageSrc"
@@ -10,7 +9,6 @@
         @mouseover="isHovered = true"
         @mouseleave="isHovered = false"
       />
-      <!-- Video que se mostrará al pasar el cursor -->
       <video
         v-if="isHovered"
         :src="videoSrc"
@@ -41,7 +39,7 @@
         <span v-html="icon7" class="h-10 w-10"></span>
       </div>
     </div>
-    <div class="p-4 space-x-2 pt-0 flex justify-center">
+    <div class="p-4 space-x-2 pt-0 flex ">
       <button
         class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md hover:shadow-lg"
         type="button"
@@ -107,6 +105,14 @@ export default {
     icon7: {
       type: String,
       required: true
+    },
+    githubUrl: {
+      type: String,
+      required: true
+    },
+    demoUrl: {
+      type: String,
+      required: true
     }
   },
   data() {
@@ -116,31 +122,29 @@ export default {
   },
   methods: {
     openGitHub() {
-      window.open('https://github.com/willsondev/frontend-arqueria-vue', '_blank');
+      window.open(this.githubUrl, '_blank');
     },
     openProyecto() {
-      window.open('https://frontend-arqueria.vercel.app/', '_blank');
+      window.open(this.demoUrl, '_blank');
     },
     playVideo() {
-      const video = this.$refs.video; // Accedemos al video usando ref
+      const video = this.$refs.video;
       if (video) {
-        video.play(); // Reproduce el video
+        video.play();
       }
     },
     pauseVideo() {
-      const video = this.$refs.video; // Accedemos al video usando ref
+      const video = this.$refs.video;
       if (video) {
-        video.pause(); // Pausa el video
-        video.currentTime = 0; // Reinicia el video
+        video.pause();
+        video.currentTime = 0;
       }
-      this.isHovered = false; // Cambia el estado de hovered
+      this.isHovered = false;
     }
   }
 }
 </script>
 
 <style scoped>
-.relative {
-  position: relative;
-}
+
 </style>
