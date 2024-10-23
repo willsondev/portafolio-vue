@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto my-8">
     <!-- Título -->
-    <h1 class="mb-6 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <h1 class="mb-6 text-xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
       Mis Proyectos Personales
     </h1>
 
@@ -32,6 +32,18 @@
         :icon3="tailwindIcon"
         githubUrl="https://github.com/willsondev/barberia-app"
   demoUrl="https://barberia-app-sepia.vercel.app"
+/>
+
+<ProjectCard
+  imageSrc="/img/elecciones.png"
+   videoSrc=""
+  title="Aplicación Web de Votaciones"
+  description="Este proyecto es una aplicación web de votaciones enfocada en elecciones regionales y municipales, desarrollada con Vue.js y Firebase. La aplicación permite a los usuarios registrarse, consultar candidatos, votar y dejar comentarios. Se utilizan servicios de autenticación de Firebase, Firestore para la base de datos y Vercel para el despliegue"
+   :icon1="vueIcon"
+        :icon2="firebaseIcon"
+        :icon3="tailwindIcon"
+        githubUrl="https://github.com/willsondev/votaciones_Linares_2024"
+  demoUrl="https://votaciones-linares-2024.vercel.app/"
 />
 
       

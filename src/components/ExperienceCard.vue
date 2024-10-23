@@ -1,5 +1,5 @@
 <template>
-  <div class=" text-white  rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+  <div class="text-white transition duration-300 rounded-lg shadow-lg hover:shadow-xl">
     <div class="p-6">
       <h2 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
         {{ title }}
@@ -13,6 +13,23 @@
       <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
         {{ description }}
       </p>
+
+      <!-- Sección de Estudio de Caso -->
+      <div v-if="caseStudy" class="block mt-4 font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        <h4 class="text-lg font-semibold">Estudio de Caso</h4>
+        <div class="mt-2">
+          <strong>Problema:</strong>
+          <p>{{ caseStudy.problem }}</p>
+        </div>
+        <div class="mt-2">
+          <strong>Solución:</strong>
+          <p>{{ caseStudy.solution }}</p>
+        </div>
+        <div class="mt-2">
+          <strong>Resultado:</strong>
+          <p>{{ caseStudy.result }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -35,11 +52,15 @@ export default {
     description: {
       type: String,
       required: true
+    },
+    caseStudy: {
+      type: Object,
+      default: null // Si no se pasa un caso de estudio, esta sección no se mostrará
     }
   }
 };
 </script>
 
 <style scoped>
-
+/* Puedes agregar tus estilos personalizados aquí */
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+  <div class="p-4 text-white transition duration-300 rounded-lg shadow-lg hover:shadow-xl">
     <div class="relative">
       <img
         v-if="!isHovered"
@@ -9,8 +9,10 @@
         @mouseover="isHovered = true"
         @mouseleave="isHovered = false"
       />
+      
+      <!-- Solo mostramos el video si existe `videoSrc` -->
       <video
-        v-if="isHovered"
+        v-if="isHovered && videoSrc"
         :src="videoSrc"
         class="w-full rounded-t-lg"
         muted
@@ -18,7 +20,7 @@
         playsinline
         @mouseenter="playVideo"
         @mouseleave="pauseVideo"
-        ref="video" 
+        ref="video"
       ></video>
     </div>
     <div class="p-6">
@@ -28,28 +30,28 @@
       <p class="block font-sans text-base antialiased font-light leading-relaxed text-gray-300">
         {{ description }}
       </p>
-      <h5 class="font-bold mt-4">Tecnologías:</h5>
-      <div class="flex flex-row space-x-2 items-start mt-2 mr-32">
-        <span v-html="icon1" class="h-10 w-10"></span>
-        <span v-html="icon2" class="h-10 w-10" v-if="icon2"></span>
-        <span v-html="icon3" class="h-10 w-10"></span>
-        <span v-html="icon4" class="h-10 w-10"></span>
-        <span v-html="icon5" class="h-10 w-10"></span>
-        <span v-html="icon6" class="h-10 w-10"></span>
-        <span v-html="icon7" class="h-10 w-10"></span>
+      <h5 class="mt-4 font-bold">Tecnologías:</h5>
+      <div class="flex flex-row items-start mt-2 mr-32 space-x-2">
+        <span v-html="icon1" class="w-10 h-10"></span>
+        <span v-html="icon2" class="w-10 h-10" v-if="icon2"></span>
+        <span v-html="icon3" class="w-10 h-10"></span>
+        <span v-html="icon4" class="w-10 h-10"></span>
+        <span v-html="icon5" class="w-10 h-10"></span>
+        <span v-html="icon6" class="w-10 h-10"></span>
+        <span v-html="icon7" class="w-10 h-10"></span>
       </div>
     </div>
-    <div class="p-4 space-x-2 pt-0 flex ">
+    <div class="flex p-4 pt-0 space-x-2">
       <button
-        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md hover:shadow-lg"
+        class="px-6 py-3 font-sans text-xs font-bold text-center text-white uppercase align-middle transition-all bg-gray-900 rounded-lg shadow-md select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:shadow-lg"
         type="button"
         @click="openGitHub"
       >
-        <i class="fab fa-github me-2"></i> Codigo
+        <i class="fab fa-github me-2"></i> Código
       </button>
 
       <button
-        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md hover:shadow-lg"
+        class="px-6 py-3 font-sans text-xs font-bold text-center text-white uppercase align-middle transition-all bg-gray-900 rounded-lg shadow-md select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:shadow-lg"
         type="button"
         @click="openProyecto"
       >
@@ -68,7 +70,7 @@ export default {
     },
     videoSrc: {
       type: String,
-      required: true
+      required: false // Ahora `videoSrc` no es requerido
     },
     title: {
       type: String,
@@ -146,5 +148,5 @@ export default {
 </script>
 
 <style scoped>
-
+/* Puedes agregar estilos adicionales aquí si los necesitas */
 </style>

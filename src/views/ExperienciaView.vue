@@ -1,8 +1,8 @@
 <template>
-  <div class="container mx-auto ">
-    <h1 class="text-white text-xl font-bold  text-center">Experiencias</h1>
+  <div class="container mx-auto">
+    <h1 class="text-xl font-bold text-center text-white">Experiencias</h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-1">
       <ExperienceCard
         title="DESARROLLO FRONT-END TRAINEE - VUE.JS"
         company="TALENTO DIGITAL (SENCE)"
@@ -16,8 +16,12 @@ un 20%.
 •Optimicé el rendimiento de aplicaciones web, mejorando
 la velocidad en un 30%.
 •Colaboré en equipos ágiles, mejorando la usabilidad y
-retención de usuarios en un 15%.
-"
+retención de usuarios en un 15%."
+        :caseStudy="{
+          problem: 'El tiempo de carga era elevado debido a múltiples llamadas innecesarias a la API.',
+          solution: 'Implementé técnicas de optimización como la reutilización de componentes y cache de datos API.',
+          result: 'Reducción del tiempo de carga en un 25%, mejorando la experiencia de usuario.'
+        }"
       />
       <ExperienceCard
         title="PRÁCTICA PROFESIONAL"
@@ -32,14 +36,12 @@ mejorando la aceptación del cliente en la fase de diseño en
 un 30%.
 •Gestión de versiones con Git, implementando un flujo de
 trabajo ágil con Gitflow, lo que permitió un lanzamiento
-anticipado del proyecto en un 10%.
-Además, me enfoqué en:
-•Desarrollo de pruebas unitarias con Jest y Vue Test Utils,
-reduciendo los errores en producción en un 40%.
-•Configuración de pruebas de UI con Cypress para
-automatización de pruebas funcionales y de rendimiento,
-mejorando la eficiencia de las pruebas en un 35%.
-"
+anticipado del proyecto en un 10%."
+        :caseStudy="{
+          problem: 'El cliente tenía dificultad en visualizar las interacciones del prototipo.',
+          solution: 'Desarrollé maquetas interactivas y un sistema de versiones ágil.',
+          result: 'Mejora en la aceptación del diseño en un 30% y una entrega más rápida del proyecto.'
+        }"
       />
       <ExperienceCard
         title="PROGRAMADOR TRAINEE"
@@ -48,14 +50,13 @@ mejorando la eficiencia de las pruebas en un 35%.
         description="•Desarrollé plataformas web en Angular y Vue.js,
 incrementando la eficiencia operativa en un 25%.
 •Mejoré la tasa de conversión en un 15% mediante
-interfaces optimizadas y escalables.
-•Implementé funcionalidades interactivas que aumentaron
-la participación en un 18%.
-•Elaboré documentación técnica, reduciendo errores en un
-25% y acelerando la adopción de nuevas herramientas en
-un 20%."
+interfaces optimizadas y escalables."
+        :caseStudy="{
+          problem: 'La plataforma tenía una baja tasa de conversión debido a una interfaz compleja.',
+          solution: 'Rediseñé la interfaz haciéndola más intuitiva y accesible.',
+          result: 'Aumento en la tasa de conversión en un 15% y una mayor retención de usuarios.'
+        }"
       />
-      <!--  ExperienceCard según sea necesario -->
     </div>
   </div>
 </template>
@@ -71,5 +72,5 @@ export default {
 </script>
 
 <style scoped>
-
+/* Aquí puedes mantener tus estilos previos o personalizar más si lo deseas */
 </style>
