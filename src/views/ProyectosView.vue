@@ -1,4 +1,6 @@
 <template>
+
+  
   <div class="container mx-auto my-8">
     <!-- Título -->
     <h1 class="mb-6 text-xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
