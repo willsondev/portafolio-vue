@@ -51,7 +51,7 @@ export default {
       this.downloading = true;
       // Pequeña simulación de delay para que se vea el "Descargando..."
       setTimeout(() => {
-        window.open('/Willson-Efrain-Huenchulao-Valdes-CV-FRONTEND.pdf', '_blank', 'noopener noreferrer'); 
+        window.open('/Willson Huenchulao Valdes (React).docx.pdf', '_blank', 'noopener noreferrer'); 
         this.downloading = false;
       }, 800); // 0.8 segundos de simulación de descarga
     }
