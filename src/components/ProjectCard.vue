@@ -1,16 +1,14 @@
 <template>
-  <div class="p-4 text-white transition duration-300 rounded-lg shadow-lg hover:shadow-xl">
+  <div class="w-full p-4 text-white transition duration-300 border rounded-lg shadow-lg hover:shadow-xl ">
     <div class="relative">
       <img
-        v-if="!isHovered"
-        :src="imageSrc"
+        v-if="!isHovered || !videoSrc" :src="imageSrc"
         alt="project-image"
-        class="w-full rounded-t-lg"
-        @mouseover="isHovered = true"
-        @mouseleave="isHovered = false"
+        class="w-full h-64 rounded-t-lg"
+        @mouseover="handleMouseOver"
+        @mouseleave="handleMouseLeave"
       />
       
-      <!-- Solo mostramos el video si existe `videoSrc` -->
       <video
         v-if="isHovered && videoSrc"
         :src="videoSrc"
@@ -23,7 +21,7 @@
         ref="video"
       ></video>
     </div>
-    <div class="p-6">
+    <div class="p-2 mt-5">
       <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white">
         {{ title }}
       </h5>
@@ -31,14 +29,8 @@
         {{ description }}
       </p>
       <h5 class="mt-4 font-bold">Tecnologías:</h5>
-      <div class="flex flex-row items-start mt-2 mr-32 space-x-2">
-        <span v-html="icon1" class="w-10 h-10"></span>
-        <span v-html="icon2" class="w-10 h-10" v-if="icon2"></span>
-        <span v-html="icon3" class="w-10 h-10"></span>
-        <span v-html="icon4" class="w-10 h-10"></span>
-        <span v-html="icon5" class="w-10 h-10"></span>
-        <span v-html="icon6" class="w-10 h-10"></span>
-        <span v-html="icon7" class="w-10 h-10"></span>
+      <div class="flex flex-row flex-wrap items-start mt-2 space-x-2">
+        <span v-for="(icon, index) in technologies" :key="index" v-html="icon" class="flex-shrink-0 w-10 h-10"></span>
       </div>
     </div>
     <div class="flex p-4 pt-0 space-x-2">
@@ -70,7 +62,8 @@ export default {
     },
     videoSrc: {
       type: String,
-      required: false // Ahora `videoSrc` no es requerido
+      required: false,
+      default: ''
     },
     title: {
       type: String,
@@ -80,34 +73,12 @@ export default {
       type: String,
       required: true
     },
-    icon1: {
-      type: String,
-      required: true
+
+    technologies: {
+      type: Array, 
+      default: () => []
     },
-    icon2: {
-      type: String,
-      required: false
-    },
-    icon3: {
-      type: String,
-      required: true
-    },
-    icon4: {
-      type: String,
-      required: true
-    },
-    icon5: {
-      type: String,
-      required: true
-    },
-    icon6: {
-      type: String,
-      required: true
-    },
-    icon7: {
-      type: String,
-      required: true
-    },
+   
     githubUrl: {
       type: String,
       required: true
@@ -139,14 +110,39 @@ export default {
       const video = this.$refs.video;
       if (video) {
         video.pause();
-        video.currentTime = 0;
+        video.currentTime = 0; 
       }
-      this.isHovered = false;
+     
+    },
+   
+    handleMouseOver() {
+      if (this.videoSrc) { 
+        this.isHovered = true;
+      }
+    },
+    handleMouseLeave() {
+      if (this.videoSrc) { 
+        this.isHovered = false;
+       
+        this.pauseVideo(); 
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-/* Puedes agregar estilos adicionales aquí si los necesitas */
+.project-card {
+
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: flex-start;
+}
 </style>

@@ -13,9 +13,7 @@
 
 
 
-        <div data-scrolly-top="flipY" class="text-white"> 
-     it's easy to do 
-</div>
+       
     </div>
 </template>
 

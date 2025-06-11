@@ -7,12 +7,12 @@ import InicioView from './views/InicioView.vue'
 
 <template >
  
- <header class="max-w-4xl mx-auto px-4 mt-20">
+ <header class="px-4 mx-auto mt-20 ">
   <div class="flex justify-center">
     <nav class="flex space-x-2 font-bold text-white">
-      <RouterLink to="/" class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2">Inicio</RouterLink>
-      <RouterLink to="/proyectos" class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2">Proyectos</RouterLink>
-      <RouterLink to="/experiencia" class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2">Experiencia</RouterLink>
+      <RouterLink to="/" class="relative flex px-2 py-1 align-middle transition-all hover:text-neutral-800 hover:bg-gray-600 hover:rounded-lg hover:px-5 dark:hover:text-neutral-200">Inicio</RouterLink>
+      <RouterLink to="/proyectos" class="relative flex px-2 py-1 align-middle transition-all hover:text-neutral-800 dark:hover:text-neutral-200 hover:bg-gray-600 hover:rounded-lg hover:px-5">Proyectos</RouterLink>
+      <RouterLink to="/experiencia" class="relative flex px-2 py-1 align-middle transition-all hover:text-neutral-800 dark:hover:text-neutral-200 hover:bg-gray-600 hover:rounded-lg hover:px-5">Experiencia</RouterLink>
     </nav>
   </div>
 </header>
@@ -20,5 +20,12 @@ import InicioView from './views/InicioView.vue'
 
   <RouterView class="mt-10" />
  
+ 
 </template>
+
+<style>
+
+</style>
+
+
 
