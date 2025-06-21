@@ -28,6 +28,13 @@
       <p class="block font-sans text-base antialiased font-light leading-relaxed text-gray-300">
         {{ description }}
       </p>
+      <h5 
+        @click="emitShowChallenges" 
+        class="mt-4 font-bold cursor-pointer hover:underline"
+      >
+        Desafíos
+      </h5>
+      
       <h5 class="mt-4 font-bold">Tecnologías:</h5>
       <div class="flex flex-row flex-wrap items-start mt-2 space-x-2">
         <span v-for="(icon, index) in technologies" :key="index" v-html="icon" class="flex-shrink-0 w-10 h-10"></span>
@@ -62,7 +69,6 @@ export default {
     },
     videoSrc: {
       type: String,
-      required: false,
       default: ''
     },
     title: {
@@ -73,12 +79,10 @@ export default {
       type: String,
       required: true
     },
-
     technologies: {
-      type: Array, 
+      type: Array,
       default: () => []
     },
-   
     githubUrl: {
       type: String,
       required: true
@@ -86,11 +90,15 @@ export default {
     demoUrl: {
       type: String,
       required: true
+    },
+    challenges: {
+      type: Array,
+      default: () => []
     }
   },
   data() {
     return {
-      isHovered: false
+      isHovered: false,
     };
   },
   methods: {
@@ -110,37 +118,39 @@ export default {
       const video = this.$refs.video;
       if (video) {
         video.pause();
-        video.currentTime = 0; 
+        video.currentTime = 0;
       }
-     
     },
-   
     handleMouseOver() {
-      if (this.videoSrc) { 
+      if (this.videoSrc) {
         this.isHovered = true;
       }
     },
     handleMouseLeave() {
-      if (this.videoSrc) { 
+      if (this.videoSrc) {
         this.isHovered = false;
-       
-        this.pauseVideo(); 
+        this.pauseVideo();
       }
+    },
+    emitShowChallenges() {
+      this.$emit('show-challenges', {
+        title: this.title,
+        description: this.description,
+        challenges: this.challenges
+      });
     }
   }
-}
+};
 </script>
 
 <style scoped>
 .project-card {
-
   padding: 1rem;
   border: 1px solid #e2e8f0;
   border-radius: 0.5rem;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .icon-container {
   display: flex;
   justify-content: flex-start;
