@@ -1,8 +1,57 @@
 <template>
     <div class="text-white">
-        <h1 class="mb-8 text-2xl font-medium cssanimation sequence leFadeInLeft">Hola, Soy Willson Huenchulao Valdes. </h1>
-        <h1 class="text-2xl font-medium tracking-tighter">Ingeniero Informático y Desarrollador Front-End</h1>
-        <p class="prose prose-neutral dark:prose-invert">
+        <h1 class="mb-8 text-4xl font-medium text-center cssanimation sequence leFadeInLeft">Hola, Soy Willson.  </h1>
+        <h2 class="text-2xl font-medium tracking-tighter">Ingeniero Informático y Desarrollador Frontend Mid-Level especializado en React.js y Vue.js con más de 5 años de experiencia</h2> <br>
+
+         <section>
+          <div class="flex w-full gap-5 grid-col-3">
+            <div class="px-3 py-1 text-black bg-white rounded-full ">
+              💻 Desarrollador Frontend
+            </div>
+            <div class="px-3 py-1 text-black bg-white border rounded-full">
+              ⚛️ React & Vue.js Expert
+            </div>
+            <div class="px-3 py-1 text-black bg-white border rounded-full">
+              🚀 JavaScript Specialist
+            </div>
+            
+          </div>
+
+          <div class="flex w-full gap-5 mt-3 grid-col-3">
+            <div class="px-3 py-1 text-black bg-white rounded-full ">
+              🎨 UX/UI Focused
+            </div>
+            <div class="px-3 py-1 text-black bg-white border rounded-full">
+              🏗️ Arquitectura Frontend
+            </div>
+            <div class="px-3 py-1 text-black bg-white border rounded-full">
+              🔧 Optimización de Rendimiento
+            </div>
+            
+          </div>
+
+          <div class="flex w-full gap-5 mt-3 grid-col-3">
+            <div class="px-3 py-1 text-black bg-white rounded-full ">
+              📱 Aplicaciones Responsivas
+            </div>
+            <div class="px-3 py-1 text-black bg-white border rounded-full">
+              ☁️ AWS IoT Projects
+            </div>
+            <div class="px-3 py-1 text-black bg-white border rounded-full">
+              🎯 Freelancer Experimentado
+            </div>
+            
+          </div>
+
+          <div class="flex w-full gap-5 mt-3 grid-col-1">
+            <div class="px-3 py-1 text-black bg-white rounded-full ">
+              🇨🇱 Talento Chileno
+            </div>
+            
+            
+          </div>
+         </section>
+        <p class="mt-5 prose prose-neutral dark:prose-invert">
             Como ingeniero informático con experiencia en desarrollo front-end, 
             <router-link to="/proyectos" class="relative text-white">
                 Trabajo
